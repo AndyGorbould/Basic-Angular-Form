@@ -3,14 +3,14 @@ export class Friend {
   private _firstName: string;
   private _lastName: string;
   private _email: string;
-  private _phoneNumber: string;
+  private _phoneNumber: number;
   private _favouriteLanguage: string;
 
   constructor(
     firstName: string,
     lastName: string,
     email: string,
-    phoneNumber: string,
+    phoneNumber: number,
     favouriteLanguage: string
   ) {
     this._firstName = firstName;
@@ -38,10 +38,10 @@ export class Friend {
   public set email(value: string) {
     this._email = value;
   }
-  public get phoneNumber(): string {
+  public get phoneNumber(): number {
     return this._phoneNumber;
   }
-  public set phoneNumber(value: string) {
+  public set phoneNumber(value: number) {
     this._phoneNumber = value;
   }
   public get favouriteLanguage(): string {

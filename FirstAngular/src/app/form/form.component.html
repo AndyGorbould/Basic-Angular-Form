@@ -16,6 +16,7 @@
   <input
     #firstName="ngModel"
     required
+    pattern="^[A-Za-z0-9 \-_.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF]"
     type="text"
     name="firstName"
     class="form-control"
@@ -24,6 +25,14 @@
     ngModel
     [class.inputInvalid]="firstName.touched && firstName.invalid"
   />
+
+
+  <span class="formValidCheck" *ngIf="firstName.errors?.required && firstName.invalid">
+    First Name is invalid
+  </span>
+
+
+
   <!-- <div
     *ngIf="firstName.touched && firstName.invalid"
     class="alert alert-danger"
@@ -34,16 +43,18 @@
   <input
     #lastName="ngModel"
     required
+    pattern="^[A-Za-z0-9 \-_.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF]"
     type="text"
     name="lastName"
     class="form-control"
     placeholder="Last Name"
     [(ngModel)]="friendModel.lastName"
     ngModel
+    [class.inputInvalid]="lastName.touched && lastName.invalid"
   />
-  <div *ngIf="lastName.touched && lastName.invalid" class="alert alert-danger">
+  <!-- <div *ngIf="lastName.touched && lastName.invalid" class="alert alert-danger">
     INVALID!
-  </div>
+  </div> -->
   <label for="email">Email:</label>
   <input
     #email="ngModel"
@@ -54,27 +65,31 @@
     placeholder="Email"
     [(ngModel)]="friendModel.email"
     ngModel
+    [class.inputInvalid]="email.touched && email.invalid"
+    pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
   />
-  <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+  <!-- <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
     INVALID!
-  </div>
+  </div> -->
   <label for="phoneNumber">Phone Number:</label>
   <input
     #phoneNumber="ngModel"
     required
-    type="text"
+    pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"
+    type="number"
     name="phoneNumber"
     class="form-control"
     placeholder="Phone Number"
     [(ngModel)]="friendModel.phoneNumber"
     ngModel
+    [class.inputInvalid]="phoneNumber.touched && phoneNumber.invalid"
   />
-  <div
+  <!-- <div
     *ngIf="phoneNumber.touched && phoneNumber.invalid"
     class="alert alert-danger"
   >
     INVALID!
-  </div>
+  </div> -->
 
   <label for="favouriteLanguage">Favourite Language:</label>
   <select

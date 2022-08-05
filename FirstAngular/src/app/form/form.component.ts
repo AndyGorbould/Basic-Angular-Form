@@ -9,7 +9,7 @@ import { Friend } from '../friend';
 export class FormComponent implements OnInit {
   languages: string[] = ['HTML', 'CSS', 'JS', 'TS', 'Carbon', 'Rust'];
   testVariable: string = 'TEST VARIABLE';
-  friendModel: Friend = new Friend('', '', '', '', '');
+  friendModel: Friend = new Friend('', '', '', 0, '');
 
   constructor() {}
 

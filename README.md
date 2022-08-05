@@ -41,3 +41,16 @@ Creates a FormControl instance from a domain model and binds it to a form contro
 
 [(ngModel)]="friendModel.firstName"
 local variable OR template variable
+
+333. Pattern Validation (aka regex dingbats)
+     Angular has a built in validators, but also allows regex 'Pattern Validation' (i don't know yet which is more secure/stable/usable)
+     eg. (inside the tag) >> pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+     eg.
+     pattern="[A-Za-z0-9 \-_.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF]"
+     <!-- regex pattern to support diacritics (umlaut, accute, grave etc) as they are fairly common :)  -->
+
+     eg.
+     ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+     <!-- for phone numbers: https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number -->
+
+     https://www.abstractapi.com/guides/angular-email-validation#:~:text=Angular%20Email%20Validation%20with%20Regex,company's%20email%20address%20for%20verification.
