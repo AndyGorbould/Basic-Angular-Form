@@ -8,5 +8,4 @@ import { Friend } from './friend'; // import the class here
 })
 export class AppComponent {
   title = 'FirstAngular';
-  defaultFriend = new Friend('', '', '', '', ''); // instantiate a null Friend object
 }

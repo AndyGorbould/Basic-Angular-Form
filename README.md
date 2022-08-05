@@ -27,7 +27,13 @@ app.component.ts = component
 Friend class needs importing at form.component.ts,
 friendModel: Friend = new Friend('', '', '', '', ''); this is in form.component.ts & app.component.ts
 
-{{ formName.value | json }} to {{ friendModel | json }} >>> notice new doesn't have '.value'
+{{ formName.value | json }} to {{ friendModel | json }} >>> notice new doesn't have '.value' :: the | (pipe) means the friendModel will flow through this pipe to the json function (jsonizer :) eg {{ birthday | date }} will take a bday & make it into a date format for this template expression. << more info https://angular.io/guide/pipes >>
+
+222. IF touched && invalid, border = red:
+     [class.inputInvalid]="firstName.touched && firstName.invalid"
+     [class.futureClass]="value.condition"
+     this adds the class 'inputInvalid' when the condictions are true, aka toggle class:
+     https://malcoded.com/posts/angular-ngclass/
 
 NgModel
 DIRECTIVE
