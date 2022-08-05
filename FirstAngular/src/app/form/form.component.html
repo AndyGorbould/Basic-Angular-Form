@@ -1,0 +1,94 @@
+<p>form works!</p>
+
+<p>
+  <!-- test  :) -->
+  {{ testVariable }} ; A pointless vaiable just to test this out
+</p>
+
+<!-- this will show  all of  the data in realtime -->
+<pre>
+
+  {{ friendModel | json }}
+</pre>
+
+<form #friendForm="ngForm">
+  <label for="firstName">First Name:</label>
+  <input
+    #firstName="ngModel"
+    required
+    type="text"
+    name="firstName"
+    class="form-control"
+    placeholder="First Name"
+    [(ngModel)]="friendModel.firstName"
+    ngModel
+    [class.inputInvalid]="firstName.touched && firstName.invalid"
+  />
+  <!-- <div
+    *ngIf="firstName.touched && firstName.invalid"
+    class="alert alert-danger"
+  >
+    INVALID!
+  </div> -->
+  <label for="lastName">Last Name:</label>
+  <input
+    #lastName="ngModel"
+    required
+    type="text"
+    name="lastName"
+    class="form-control"
+    placeholder="Last Name"
+    [(ngModel)]="friendModel.lastName"
+    ngModel
+  />
+  <div *ngIf="lastName.touched && lastName.invalid" class="alert alert-danger">
+    INVALID!
+  </div>
+  <label for="email">Email:</label>
+  <input
+    #email="ngModel"
+    required
+    type="text"
+    name="email"
+    class="form-control"
+    placeholder="Email"
+    [(ngModel)]="friendModel.email"
+    ngModel
+  />
+  <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+    INVALID!
+  </div>
+  <label for="phoneNumber">Phone Number:</label>
+  <input
+    #phoneNumber="ngModel"
+    required
+    type="text"
+    name="phoneNumber"
+    class="form-control"
+    placeholder="Phone Number"
+    [(ngModel)]="friendModel.phoneNumber"
+    ngModel
+  />
+  <div
+    *ngIf="phoneNumber.touched && phoneNumber.invalid"
+    class="alert alert-danger"
+  >
+    INVALID!
+  </div>
+
+  <label for="favouriteLanguage">Favourite Language:</label>
+  <select
+    #favouriteLanguage="ngModel"
+    name="favouriteLanguage"
+    class="form-control"
+    [(ngModel)]="friendModel.favouriteLanguage"
+    ngModel
+  >
+    <option value="">--SELECT--</option>
+    <option *ngFor="let language of languages">{{ language }}</option>
+  </select>
+
+  <button type="submit">Submit</button>
+
+  <!-- {{'My friend is called ' + defaultFriend.firstName}} -->
+</form>
