@@ -11,7 +11,7 @@
   {{ friendModel | json }}
 </pre>
 
-<form #friendForm="ngForm">
+<form #friendForm="ngForm" (ngSubmit)="formSubmit(friendForm)" novalidate>
   <label for="firstName">First Name:</label>
   <input
     #firstName="ngModel"

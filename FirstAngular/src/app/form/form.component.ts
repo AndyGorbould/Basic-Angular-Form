@@ -13,5 +13,10 @@ export class FormComponent implements OnInit {
 
   constructor() {}
 
+  formSubmit(friendForm: object) {
+    // object will probably change
+    console.log(friendForm);
+  }
+
   ngOnInit(): void {}
 }
