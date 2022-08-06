@@ -54,3 +54,5 @@ local variable OR template variable
      <!-- for phone numbers: https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number -->
 
      https://www.abstractapi.com/guides/angular-email-validation#:~:text=Angular%20Email%20Validation%20with%20Regex,company's%20email%20address%20for%20verification.
+
+334. got the 'favouriteLanguage' dropdown selector to be required with: `[ngClass]="{ 'is-invalid': friendForm.submitted && favouriteLanguage.invalid }"`

@@ -93,17 +93,23 @@
 
   <label for="favouriteLanguage">Favourite Language:</label>
   <select
+    required
     #favouriteLanguage="ngModel"
     name="favouriteLanguage"
     class="form-control"
     [(ngModel)]="friendModel.favouriteLanguage"
     ngModel
+    [ngClass]="{
+      'is-invalid': friendForm.submitted && favouriteLanguage.invalid
+    }"
   >
     <option value="">--SELECT--</option>
-    <option *ngFor="let language of languages">{{ language }}</option>
+    <option required *ngFor="let language of languages" value="{{ language }}">
+      {{ language }}
+    </option>
   </select>
 
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="friendForm.form.invalid">Submit</button>
 
   <!-- {{'My friend is called ' + defaultFriend.firstName}} -->
 </form>
