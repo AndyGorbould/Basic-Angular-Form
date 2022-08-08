@@ -53,9 +53,9 @@ app.get("/", function (request, response) {
 });
 
 app.post("/addFriend", function (request, response) {
-  // console.log("i h8 kids :) ");
   console.log(request.body);
   // request body TO array push
+  allFriends.push(request.body);
   response.status(200).send({ message: "Data received" });
 });
 
