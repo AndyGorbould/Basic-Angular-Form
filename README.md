@@ -29,11 +29,11 @@ friendModel: Friend = new Friend('', '', '', '', ''); this is in form.component.
 
 {{ formName.value | json }} to {{ friendModel | json }} >>> notice new doesn't have '.value' :: the | (pipe) means the friendModel will flow through this pipe to the json function (jsonizer :) eg {{ birthday | date }} will take a bday & make it into a date format for this template expression. << more info https://angular.io/guide/pipes >>
 
-222. IF touched && invalid, border = red:
-     [class.inputInvalid]="firstName.touched && firstName.invalid"
-     [class.futureClass]="value.condition"
-     this adds the class 'inputInvalid' when the condictions are true, aka toggle class:
-     https://malcoded.com/posts/angular-ngclass/
+9. IF touched && invalid, border = red:
+   [class.inputInvalid]="firstName.touched && firstName.invalid"
+   [class.futureClass]="value.condition"
+   this adds the class 'inputInvalid' when the condictions are true, aka toggle class:
+   https://malcoded.com/posts/angular-ngclass/
 
 NgModel
 DIRECTIVE
@@ -42,21 +42,21 @@ Creates a FormControl instance from a domain model and binds it to a form contro
 [(ngModel)]="friendModel.firstName"
 local variable OR template variable
 
-333. Pattern Validation (aka regex dingbats)
-     Angular has a built in validators, but also allows regex 'Pattern Validation' (i don't know yet which is more secure/stable/usable)
-     eg. (inside the tag) >> pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
-     eg.
-     pattern="[A-Za-z0-9 \-_.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF]"
-     <!-- regex pattern to support diacritics (umlaut, accute, grave etc) as they are fairly common :)  -->
+9. Pattern Validation (aka regex dingbats)
+   Angular has a built in validators, but also allows regex 'Pattern Validation' (i don't know yet which is more secure/stable/usable)
+   eg. (inside the tag) >> pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
+   eg.
+   pattern="[A-Za-z0-9 \-_.\u00C0-\u00D6\u00D8-\u00F6\u00F8-\u00FF]"
+    <!-- regex pattern to support diacritics (umlaut, accute, grave etc) as they are fairly common :)  -->
 
-     eg.
-     ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
-     <!-- for phone numbers: https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number -->
+   eg.
+   ^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$
+    <!-- for phone numbers: https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number -->
 
-     https://www.abstractapi.com/guides/angular-email-validation#:~:text=Angular%20Email%20Validation%20with%20Regex,company's%20email%20address%20for%20verification.
+   https://www.abstractapi.com/guides/angular-email-validation#:~:text=Angular%20Email%20Validation%20with%20Regex,company's%20email%20address%20for%20verification.
 
-334. got the 'favouriteLanguage' dropdown selector to be required with: `[ngClass]="{ 'is-invalid': friendForm.submitted && favouriteLanguage.invalid }"`
+10. got the 'favouriteLanguage' dropdown selector to be required with: `[ngClass]="{ 'is-invalid': friendForm.submitted && favouriteLanguage.invalid }"`
 
-335. phone number probably has to be string to accomodate the preceesing '0' or '+'
+11. phone number probably has to be string to accomodate the preceesing '0' or '+'
 
-336. server localhost:9090/allFriends working & displaying
+12. server localhost:9090/allFriends working & displaying
