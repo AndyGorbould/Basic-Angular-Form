@@ -10,106 +10,117 @@
 
   {{ friendModel | json }}
 </pre>
+<div class="formContainer">
+  <form #friendForm="ngForm" (ngSubmit)="formSubmit(friendForm)" novalidate>
+    <label for="firstName">First Name:</label>
+    <input
+      #firstName="ngModel"
+      required
+      pattern="^([A-Za-z]+)(\s)?([A-Za-z]*)"
+      type="text"
+      name="firstName"
+      class="form-control"
+      placeholder="First Name"
+      [(ngModel)]="friendModel.firstName"
+      ngModel
+      [class.inputInvalid]="firstName.touched && firstName.invalid"
+    />
 
-<form #friendForm="ngForm" (ngSubmit)="formSubmit(friendForm)" novalidate>
-  <label for="firstName">First Name:</label>
-  <input
-    #firstName="ngModel"
-    required
-    pattern="^([A-Za-z]+)(\s)?([A-Za-z]*)"
-    type="text"
-    name="firstName"
-    class="form-control"
-    placeholder="First Name"
-    [(ngModel)]="friendModel.firstName"
-    ngModel
-    [class.inputInvalid]="firstName.touched && firstName.invalid"
-  />
-
-  <!-- <span
+    <!-- <span
     class="formValidCheck"
     *ngIf="firstName.errors?.required && firstName.invalid"
   >
     First Name is invalid
   </span> -->
 
-  <!-- <div
+    <!-- <div
     *ngIf="firstName.touched && firstName.invalid"
     class="alert alert-danger"
   >
     INVALID!
   </div> -->
-  <label for="lastName">Last Name:</label>
-  <input
-    #lastName="ngModel"
-    required
-    pattern="^([A-Za-z]+)(\s)?([A-Za-z]*)"
-    type="text"
-    name="lastName"
-    class="form-control"
-    placeholder="Last Name"
-    [(ngModel)]="friendModel.lastName"
-    ngModel
-    [class.inputInvalid]="lastName.touched && lastName.invalid"
-  />
-  <!-- <div *ngIf="lastName.touched && lastName.invalid" class="alert alert-danger">
+    <label for="lastName">Last Name:</label>
+    <input
+      #lastName="ngModel"
+      required
+      pattern="^([A-Za-z]+)(\s)?([A-Za-z]*)"
+      type="text"
+      name="lastName"
+      class="form-control"
+      placeholder="Last Name"
+      [(ngModel)]="friendModel.lastName"
+      ngModel
+      [class.inputInvalid]="lastName.touched && lastName.invalid"
+    />
+    <!-- <div *ngIf="lastName.touched && lastName.invalid" class="alert alert-danger">
     INVALID!
   </div> -->
-  <label for="email">Email:</label>
-  <input
-    #email="ngModel"
-    required
-    pattern="^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"
-    type="text"
-    name="email"
-    class="form-control"
-    placeholder="Email"
-    [(ngModel)]="friendModel.email"
-    ngModel
-    [class.inputInvalid]="email.touched && email.invalid"
-  />
-  <!-- <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
+    <label for="email">Email:</label>
+    <input
+      #email="ngModel"
+      required
+      pattern="^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$"
+      type="text"
+      name="email"
+      class="form-control"
+      placeholder="Email"
+      [(ngModel)]="friendModel.email"
+      ngModel
+      [class.inputInvalid]="email.touched && email.invalid"
+    />
+    <!-- <div *ngIf="email.touched && email.invalid" class="alert alert-danger">
     INVALID!
   </div> -->
-  <label for="phoneNumber">Phone Number:</label>
-  <input
-    #phoneNumber="ngModel"
-    required
-    pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-    type="number"
-    name="phoneNumber"
-    class="form-control"
-    placeholder="Phone Number"
-    [(ngModel)]="friendModel.phoneNumber"
-    ngModel
-    [class.inputInvalid]="phoneNumber.touched && phoneNumber.invalid"
-  />
-  <!-- <div
+    <label for="phoneNumber">Phone Number:</label>
+    <input
+      #phoneNumber="ngModel"
+      required
+      pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+      type="number"
+      name="phoneNumber"
+      class="form-control"
+      placeholder="Phone Number"
+      [(ngModel)]="friendModel.phoneNumber"
+      ngModel
+      [class.inputInvalid]="phoneNumber.touched && phoneNumber.invalid"
+    />
+    <!-- <div
     *ngIf="phoneNumber.touched && phoneNumber.invalid"
     class="alert alert-danger"
   >
     INVALID!
   </div> -->
 
-  <label for="favouriteLanguage">Favourite Language:</label>
-  <select
-    required
-    #favouriteLanguage="ngModel"
-    name="favouriteLanguage"
-    class="form-control"
-    [(ngModel)]="friendModel.favouriteLanguage"
-    ngModel
-    [ngClass]="{
-      'is-invalid': friendForm.submitted && favouriteLanguage.invalid
-    }"
-  >
-    <option value="">--SELECT--</option>
-    <option required *ngFor="let language of languages" value="{{ language }}">
-      {{ language }}
-    </option>
-  </select>
+    <label for="favouriteLanguage">Favourite Language:</label>
+    <select
+      required
+      #favouriteLanguage="ngModel"
+      name="favouriteLanguage"
+      class="form-control"
+      [(ngModel)]="friendModel.favouriteLanguage"
+      ngModel
+      [ngClass]="{
+        'is-invalid': friendForm.submitted && favouriteLanguage.invalid
+      }"
+    >
+      <option value="">--SELECT--</option>
+      <option
+        required
+        *ngFor="let language of languages"
+        value="{{ language }}"
+      >
+        {{ language }}
+      </option>
+    </select>
 
-  <button type="submit" [disabled]="friendForm.form.invalid">Submit</button>
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="friendForm.form.invalid"
+    >
+      Submit
+    </button>
 
-  <!-- {{'My friend is called ' + defaultFriend.firstName}} -->
-</form>
+    <!-- {{'My friend is called ' + defaultFriend.firstName}} -->
+  </form>
+</div>

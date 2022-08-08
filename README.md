@@ -56,3 +56,7 @@ local variable OR template variable
      https://www.abstractapi.com/guides/angular-email-validation#:~:text=Angular%20Email%20Validation%20with%20Regex,company's%20email%20address%20for%20verification.
 
 334. got the 'favouriteLanguage' dropdown selector to be required with: `[ngClass]="{ 'is-invalid': friendForm.submitted && favouriteLanguage.invalid }"`
+
+335. phone number probably has to be string to accomodate the preceesing '0' or '+'
+
+336. server localhost:9090/allFriends working & displaying

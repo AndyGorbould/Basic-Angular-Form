@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AddFriendServiceService } from '../add-friend-service.service';
 import { Friend } from '../friend';
 
 @Component({
@@ -16,6 +17,7 @@ export class FormComponent implements OnInit {
   formSubmit(friendForm: object) {
     // object will probably change
     console.log(friendForm);
+    this.addFriend(friendForm);
   }
 
   ngOnInit(): void {}
