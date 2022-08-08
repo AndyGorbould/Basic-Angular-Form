@@ -8,13 +8,13 @@ import { Observable } from 'rxjs';
 })
 export class AddFriendServiceService {
   // private http: HttpClient;
-  private url: string = 'http://localhost:9090';
+  private url: string = 'http://localhost:9090/addFriend';
   data: string = 'babababa';
 
   constructor(private http: HttpClient) {}
 
-  addFriend(_friendForm: object): any {
-    this.http.post(this.url, 'data');
+  addFriend(_friendModel: object): any {
+    return this.http.post(this.url, _friendModel);
   }
 
   removeFriend() {

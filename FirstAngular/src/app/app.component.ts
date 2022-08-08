@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  // http = new HttpClientModule;
   title = 'FirstAngular';
   url = '';
   data = '';

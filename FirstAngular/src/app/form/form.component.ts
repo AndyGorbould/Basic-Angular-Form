@@ -12,12 +12,13 @@ export class FormComponent implements OnInit {
   testVariable: string = 'TEST VARIABLE';
   friendModel: Friend = new Friend('', '', '', 0, '');
 
-  constructor() {}
+  constructor(private addFriend: AddFriendServiceService) {}
 
   formSubmit(friendForm: object) {
     // object will probably change
-    console.log(friendForm);
-    this.addFriend(friendForm);
+    console.log(this.friendModel);
+    this.addFriend.addFriend(this.friendModel).subscribe();
+    // new Friend() = AddFriendServiceService.addFriend(friendForm);
   }
 
   ngOnInit(): void {}

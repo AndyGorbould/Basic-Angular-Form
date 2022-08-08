@@ -52,7 +52,10 @@ app.get("/", function (request, response) {
   response.send("Hello from server");
 });
 
-app.post("/", function (request, response) {
+app.post("/addFriend", function (request, response) {
+  // console.log("i h8 kids :) ");
+  console.log(request.body);
+  // request body TO array push
   response.status(200).send({ message: "Data received" });
 });
 
