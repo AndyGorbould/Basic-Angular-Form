@@ -124,3 +124,34 @@
     <!-- {{'My friend is called ' + defaultFriend.firstName}} -->
   </form>
 </div>
+
+// onload display all the friends, @todo - make it look better
+<ul>
+  <li *ngFor="let friend of allFriends">
+    <tr>
+      {{
+        friend.firstName
+      }}
+    </tr>
+    <tr>
+      {{
+        friend.lastName
+      }}
+    </tr>
+    <tr>
+      {{
+        friend.email
+      }}
+    </tr>
+    <tr>
+      {{
+        friend.phoneNumber
+      }}
+    </tr>
+    <tr>
+      {{
+        friend.favouriteLanguage
+      }}
+    </tr>
+  </li>
+</ul>
