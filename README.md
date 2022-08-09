@@ -60,3 +60,9 @@ local variable OR template variable
 11. phone number probably has to be string to accomodate the preceesing '0' or '+'
 
 12. server localhost:9090/allFriends working & displaying
+
+13. phone numbers are messing up because they need a leading 0
+
+14. after submit, the table appends instead of reloading with the extras
+
+15. bootstrap isn't doing what it should. naughty bootstrap :'(

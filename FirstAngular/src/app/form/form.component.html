@@ -1,15 +1,15 @@
-<p>form works!</p>
+<!-- <p>form works!</p> -->
 
-<p>
-  <!-- test  :) -->
-  {{ testVariable }} ; A pointless vaiable just to test this out
-</p>
+<!-- <p> -->
+<!-- test  :) -->
+<!-- {{ testVariable }} ; A pointless vaiable just to test this out -->
+<!-- </p> -->
 
 <!-- this will show  all of  the data in realtime -->
-<pre>
+<!-- <pre> -->
 
-  {{ friendModel | json }}
-</pre>
+<!-- {{ friendModel | json }} -->
+<!-- </pre> -->
 <div class="formContainer">
   <form #friendForm="ngForm" (ngSubmit)="formSubmit(friendForm)" novalidate>
     <label for="firstName">First Name:</label>
@@ -125,33 +125,34 @@
   </form>
 </div>
 
-// onload display all the friends, @todo - make it look better
-<table class="table-dark text-success">
-  <thead class="thead-dark">
+<!-- // onload display all the friends, @todo - make it look better -->
+<div class="formContainer">
+  <label for="table">All of your friends!</label>
+  <table class="table table-dark table-bordered text-dark">
     <tr>
-      <th>Fist Name</th>
-      <th>Last Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-      <th>Favourite Language</th>
+      <th scope="col">Fist Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Favourite Language</th>
     </tr>
-  </thead>
 
-  <tr *ngFor="let friend of allFriends">
-    <td>
-      {{ friend.firstName }}
-    </td>
-    <td>
-      {{ friend.lastName }}
-    </td>
-    <td>
-      {{ friend.email }}
-    </td>
-    <td>
-      {{ friend.phoneNumber }}
-    </td>
-    <td>
-      {{ friend.favouriteLanguage }}
-    </td>
-  </tr>
-</table>
+    <tr *ngFor="let friend of allFriends">
+      <td>
+        {{ friend.firstName }}
+      </td>
+      <td>
+        {{ friend.lastName }}
+      </td>
+      <td>
+        {{ friend.email }}
+      </td>
+      <td>
+        {{ friend.phoneNumber }}
+      </td>
+      <td>
+        {{ friend.favouriteLanguage }}
+      </td>
+    </tr>
+  </table>
+</div>

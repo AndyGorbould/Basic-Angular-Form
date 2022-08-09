@@ -11,7 +11,7 @@ import { Friend } from '../friend';
 export class FormComponent implements OnInit {
   languages: string[] = ['HTML', 'CSS', 'JS', 'TS', 'Carbon', 'Rust'];
   testVariable: string = 'TEST VARIABLE';
-  friendModel: Friend = new Friend('', '', '', 0, '');
+  friendModel: Friend = new Friend('', '', '', '', '');
   allFriends: Array<Friend> = [];
 
   constructor(private addFriend: AddFriendServiceService) {}
