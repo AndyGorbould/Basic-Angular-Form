@@ -21,5 +21,19 @@ export class FormComponent implements OnInit {
     // new Friend() = AddFriendServiceService.addFriend(friendForm);
   }
 
+  getAllFriends(friendForm: object) {
+    // object will probably change
+    console.log(this.friendModel);
+    this.addFriend.addFriend(this.friendModel).subscribe();
+    // new Friend() = AddFriendServiceService.addFriend(friendForm);
+  }
+
+  public async getFriends() => {
+    data = await fetch('http://localhost:9090/allFriends');
+    this.getFriends = await data.json();
+    console.log(this.getFriends);
+    return Promise: Promise;
+  }
+
   ngOnInit(): void {}
 }

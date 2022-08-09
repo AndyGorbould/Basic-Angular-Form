@@ -17,6 +17,10 @@ export class AddFriendServiceService {
     return this.http.post(this.url, _friendModel);
   }
 
+  getFriends(_friendModel: object): any {
+    return this.http.get(this.url, _friendModel);
+  }
+
   removeFriend() {
     // select using 'email' value, DELETE FROM friendArry WHERE email='this.email' ?
   }
