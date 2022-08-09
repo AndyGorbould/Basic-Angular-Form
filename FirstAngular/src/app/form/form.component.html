@@ -126,32 +126,32 @@
 </div>
 
 // onload display all the friends, @todo - make it look better
-<ul>
-  <li *ngFor="let friend of allFriends">
+<table class="table-dark text-success">
+  <thead class="thead-dark">
     <tr>
-      {{
-        friend.firstName
-      }}
+      <th>Fist Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Favourite Language</th>
     </tr>
-    <tr>
-      {{
-        friend.lastName
-      }}
-    </tr>
-    <tr>
-      {{
-        friend.email
-      }}
-    </tr>
-    <tr>
-      {{
-        friend.phoneNumber
-      }}
-    </tr>
-    <tr>
-      {{
-        friend.favouriteLanguage
-      }}
-    </tr>
-  </li>
-</ul>
+  </thead>
+
+  <tr *ngFor="let friend of allFriends">
+    <td>
+      {{ friend.firstName }}
+    </td>
+    <td>
+      {{ friend.lastName }}
+    </td>
+    <td>
+      {{ friend.email }}
+    </td>
+    <td>
+      {{ friend.phoneNumber }}
+    </td>
+    <td>
+      {{ friend.favouriteLanguage }}
+    </td>
+  </tr>
+</table>

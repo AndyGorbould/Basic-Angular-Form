@@ -20,6 +20,7 @@ export class FormComponent implements OnInit {
     // object will probably change
     console.log(this.friendModel);
     this.addFriend.addFriend(this.friendModel).subscribe();
+    this.ngOnInit();
     // new Friend() = AddFriendServiceService.addFriend(friendForm);
   }
 

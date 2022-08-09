@@ -1,6 +1,6 @@
-* {
+/* * {
     display: block;
-}
+} */
 
 .inputInvalid {
     border-color: red;
